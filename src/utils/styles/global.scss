@@ -1,0 +1,19 @@
+html,
+body,
+#___gatsby {
+  min-height: 100vh;
+}
+
+#___gatsby > div {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  background: lightblue;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

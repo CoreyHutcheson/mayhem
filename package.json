@@ -1,0 +1,48 @@
+{
+  "name": "gatsby-wordpress-netlify-starter",
+  "description": "A simple starter to get up and developing quickly with Gatsby, Wordpress, and Netlify",
+  "author": "Corey Hutcheson",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "setup": "node -v  > .nvmrc && netlify init",
+    "build": "gatsby build",
+    "dev": "gatsby develop -o",
+    "dev-m": "gatsby develop -o -H 0.0.0.0",
+    "start": "npm run dev",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "css-reset-and-normalize": "^2.0.1",
+    "gatsby": "^2.3.17",
+    "gatsby-image": "^2.0.37",
+    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sharp": "^2.0.33",
+    "gatsby-source-wordpress": "^3.0.53",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "gatsby-plugin-root-import": "^2.0.5",
+    "prettier": "^1.16.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CoreyHutcheson/gatsby-wordpress-netlify-starter"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

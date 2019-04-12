@@ -1,0 +1,7 @@
+@import "src/utils/styles/mixins";
+
+footer {
+  background: pink;
+  height: 70px;
+  @include center;
+}
