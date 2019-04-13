@@ -1,5 +1,15 @@
 @import "src/utils/styles/variables";
 
 .mayhem-logo {
-  fill: $color__brand;
+  &__svg {
+    width: 200px;
+  }
+
+  &__path {
+    fill: $color__brand;
+  }
+}
+
+.custom-logo-link {
+  display: inline-block;
 }
