@@ -10,10 +10,19 @@ body,
   flex-direction: column;
 }
 
+body {
+  line-height: 1.5;
+}
+
 main {
   background: lightblue;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// Used on body element to control movement when nav menu is open
+.is-clipped {
+  overflow: hidden;
 }

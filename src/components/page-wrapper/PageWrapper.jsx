@@ -6,7 +6,7 @@ import Footer from "src/components/footer";
 
 const PageWrapper = ({ children }) => (
   <>
-    <header>
+    <header id="masthead" className="site-header">
       <NavBar />
     </header>
     <main>{children}</main>
