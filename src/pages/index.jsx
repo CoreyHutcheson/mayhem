@@ -1,17 +1,13 @@
 import React from "react";
 
 import PageWrapper from "src/components/page-wrapper";
-import { useWordpressPages } from "src/utils/js/custom-hooks/useWordpressPages";
+
+import "src/utils/styles/page-styles/index.scss";
 
 const IndexPage = () => {
-  const data = useWordpressPages();
-
   return (
     <PageWrapper>
-      {/* Uses custom hook to loop through all WP pages displaying the title */}
-      {data.map(({ node }) => (
-        <div>{node.title}</div>
-      ))}
+      <div>Index Page</div>
     </PageWrapper>
   );
 };
