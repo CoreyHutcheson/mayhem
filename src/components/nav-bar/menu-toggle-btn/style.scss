@@ -1,0 +1,46 @@
+@import "src/utils/styles/variables";
+
+.site-header__menu-toggle-btn {
+  display: block;
+}
+
+.menu-toggle-btn {
+  width: 40px;
+  height: 40px;
+
+  & span {
+    display: block;
+    width: 100%;
+    height: 6px;
+    position: relative;
+    left: 0px;
+    margin-top: 5.5px;
+    background: $color__brand;
+    transition: 0.5s ease-in-out;
+    transform-origin: left center;
+  }
+}
+
+.js-menu-is-open span {
+  width: 33.24155px;
+  left: 20%;
+
+  &:nth-child(1) {
+    transform: rotate(43.74624deg);
+  }
+
+  &:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  &:nth-child(3) {
+    transform: rotate(-43.74624deg);
+  }
+}
+
+@media (min-width: 900px) {
+  .site-header__menu-toggle-btn {
+    display: none;
+  }
+}
