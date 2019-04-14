@@ -14,7 +14,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // Remove protocol and trailing slash
-        baseUrl: `demo.wp-api.org`,
+        baseUrl: `mayhem.coreyhutcheson.com`,
         protocol: `https`,
         hostingWPCOM: false,
         // Set to false if not using Advanced Custom Fields wordpress plugin
