@@ -20,9 +20,9 @@ const ListItem = ({ link, title }) => (
 
 const FontAwesomeListItem = ({ link, icon }) => (
   <li className="nav-menu__list-item">
-    <Link to={link} className="nav-menu__link">
+    <a href={link} className="nav-menu__link">
       <FontAwesomeIcon icon={icon} size="1x" />
-    </Link>
+    </a>
   </li>
 );
 
