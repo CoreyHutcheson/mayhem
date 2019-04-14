@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Wordpress Netlify Starter`,
-    description: `Get setup quickly running a wordpress back-end that get converted to a static site by gatsby and hosted on netlify with this starter theme.`,
+    title: `Mayhem Wrestling`,
+    description: `Website for Mayhem Wrestling.`,
     author: `Corey Hutcheson`,
   },
   plugins: [
@@ -19,22 +19,24 @@ module.exports = {
         hostingWPCOM: false,
         // Set to false if not using Advanced Custom Fields wordpress plugin
         useACF: true,
+        // searchAndReplaceContentUrls: {
+        //   sourceUrl: "https://mayhem.coreyhutcheson.com",
+        //   replacementUrl: "https://mayhem.netlify.com",
+        // },
+        excludedRoutes: ["/siteground-optimizer/**", "/*/*/themes"],
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Mayhem Wrestling`,
-        short_name: `Mayhem`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/assets/images/mayhem-logo.svg`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Mayhem Wrestling`,
+    //     short_name: `Mayhem`,
+    //     start_url: `/`,
+    //     background_color: `#663399`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     icon: `src/assets/images/mayhem-logo.svg`, // This path is relative to the root of the site.
+    //   },
+    // },
   ],
 };
