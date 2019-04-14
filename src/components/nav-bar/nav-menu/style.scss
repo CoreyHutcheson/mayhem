@@ -86,6 +86,11 @@
     display: flex;
     justify-content: center;
     background: #333;
+
+    & a {
+      padding: 0px 6px;
+      margin: 4px;
+    }
   }
 }
 

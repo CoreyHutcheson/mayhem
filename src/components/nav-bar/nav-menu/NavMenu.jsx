@@ -1,12 +1,27 @@
 import React from "react";
 import { Link } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookSquare,
+  faYoutube,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 import "./style.scss";
 
-const ListItem = ({ title }) => (
+const ListItem = ({ link, title }) => (
   <li className="nav-menu__list-item">
-    <Link to={title.toLowerCase()} className="nav-menu__link">
-      {title.charAt(0).toUpperCase() + title.substring(1)}
+    <Link to={link} className="nav-menu__link">
+      {title}
+    </Link>
+  </li>
+);
+
+const FontAwesomeListItem = ({ link, icon }) => (
+  <li className="nav-menu__list-item">
+    <Link to={link} className="nav-menu__link">
+      <FontAwesomeIcon icon={icon} size="1x" />
     </Link>
   </li>
 );
@@ -24,19 +39,25 @@ const NavMenu = ({ menuExpanded }) => {
         className="nav-menu main-navigation__menu"
         aria-expanded="false"
       >
-        <ListItem title="roster" />
-        <ListItem title="gallery" />
-        <ListItem title="about" />
+        <ListItem link="/roster" title="Roster" />
+        <ListItem link="/gallery" title="Gallery" />
+        <ListItem link="/about" title="About" />
       </ul>
       <ul
         id="menu-social-menu-links"
         className="nav-menu main-navigation__menu"
         aria-expanded="false"
       >
-        <ListItem title="f" />
-        <ListItem title="y" />
-        <ListItem title="t" />
-        <ListItem title="i" />
+        <FontAwesomeListItem link="www.facebook.com" icon={faFacebookSquare} />
+        <FontAwesomeListItem
+          link="https://www.youtube.com/channel/UCsKdL88vDNqTdltcQztf6NA/featured"
+          icon={faYoutube}
+        />
+        <FontAwesomeListItem link="http://www.twitter.com" icon={faTwitter} />
+        <FontAwesomeListItem
+          link="http://www.instagram.com"
+          icon={faInstagram}
+        />
       </ul>
     </nav>
   );
