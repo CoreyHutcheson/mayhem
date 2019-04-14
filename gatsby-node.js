@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: slash(pageTemplate),
       context: {
         id: edge.node.id,
-        title: edge.node.title,
+        title: edge.node.title.rendered,
         event_name: edge.node.acf.event_name,
         event_date: edge.node.acf.event_date,
         featured_event: edge.node.acf.featured_event,
