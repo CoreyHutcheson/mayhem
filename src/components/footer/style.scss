@@ -1,7 +1,9 @@
-@import "src/utils/styles/mixins";
+.site-footer {
+  display: block;
+}
 
-footer {
-  background: pink;
-  height: 70px;
-  @include center;
+@media (min-width: 900px) {
+  .site-footer {
+    display: flex;
+  }
 }
