@@ -23,7 +23,12 @@ module.exports = {
         //   sourceUrl: "https://mayhem.coreyhutcheson.com",
         //   replacementUrl: "https://mayhem.netlify.com",
         // },
-        excludedRoutes: ["/siteground-optimizer/**", "/*/*/themes"],
+        excludedRoutes: [
+          "/siteground-optimizer/**",
+          "/*/*/themes",
+          "/*/*/users",
+          "/*/*/settings",
+        ],
       },
     },
     // {
