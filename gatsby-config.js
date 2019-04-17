@@ -26,7 +26,7 @@ module.exports = {
         excludedRoutes: [
           "/siteground-optimizer/**",
           "/*/*/themes",
-          "/*/*/users",
+          "/*/*/users/*",
           "/*/*/settings",
         ],
       },
