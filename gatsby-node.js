@@ -1,26 +1,44 @@
 const path = require(`path`);
 const slash = require(`slash`);
+const moment = require("moment");
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
+
+  // Creats timestamp field for wp_events
+  if (node.internal.type === `wordpress__wp_event`) {
+    const eventDate = new Date(node.acf.event_date);
+
+    createNodeField({
+      name: "timestamp",
+      node,
+      value: +moment(eventDate).format("X"),
+    });
+  }
+};
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const currentDate = new Date();
+  const currentTimestamp = moment().unix();
 
+  // All upcoming events
+  // Events before current date/time are filtered out
   const result = await graphql(
     `
-      query AllWordpressEvents {
-        allWordpressWpEvent {
+      query AllUpcomingEvents($date: Int) {
+        allWordpressWpEvent(filter: { fields: { timestamp: { gt: $date } } }) {
           edges {
             node {
               id
               slug
-              acf {
-                event_date
-              }
             }
           }
         }
       }
-    `
+    `,
+    {
+      date: currentTimestamp,
+    }
   );
 
   // Check for any errors
@@ -29,17 +47,11 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressWpEvent } = result.data;
-
-  // Filter out events that have already happened
-  const upcomingEvents = allWordpressWpEvent.edges.filter(({ node }) => {
-    const eventDate = new Date(node.acf.event_date);
-    return currentDate < eventDate;
-  });
+  const { allWordpressWpEvent: upcomingEvents } = result.data;
 
   const pageTemplate = path.resolve(`./src/templates/event.jsx`);
 
-  upcomingEvents.forEach(edge => {
+  upcomingEvents.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.slug}/`,
       component: slash(pageTemplate),
