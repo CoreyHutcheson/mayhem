@@ -1,0 +1,31 @@
+@import "src/utils/styles/variables";
+
+.event-navigation {
+  &__right-link {
+    margin-left: auto;
+
+    & span {
+      margin-right: 5px;
+    }
+  }
+
+  &__left-link {
+    margin-right: auto;
+
+    & span {
+      margin-left: 5px;
+    }
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  &__button {
+    color: $color__brand;
+    font-size: 1rem;
+    padding: 5px 10px;
+    background: #2a2a2a;
+    border-radius: 3px;
+  }
+}
