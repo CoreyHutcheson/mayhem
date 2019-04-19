@@ -23,13 +23,23 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // All upcoming events
   // Events before current date/time are filtered out
+  // Sorted in ascending order with soonest event first
   const result = await graphql(
     `
       query AllUpcomingEvents($date: Int) {
-        allWordpressWpEvent(filter: { fields: { timestamp: { gt: $date } } }) {
+        allWordpressWpEvent(
+          filter: { fields: { timestamp: { gt: $date } } }
+          sort: { fields: [fields___timestamp], order: ASC }
+        ) {
           edges {
+            previous {
+              slug
+            }
             node {
               id
+              slug
+            }
+            next {
               slug
             }
           }
@@ -52,11 +62,16 @@ exports.createPages = async ({ graphql, actions }) => {
   const pageTemplate = path.resolve(`./src/templates/EventTemplate.jsx`);
 
   upcomingEvents.edges.forEach(edge => {
+    const prevEvent = !edge.previous ? null : edge.previous.slug;
+    const nextEvent = !edge.next ? null : edge.next.slug;
+
     createPage({
       path: `/event/${edge.node.slug}/`,
       component: slash(pageTemplate),
       context: {
         id: edge.node.id,
+        prevEvent,
+        nextEvent,
       },
     });
   });
