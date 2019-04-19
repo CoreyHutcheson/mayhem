@@ -4,37 +4,8 @@ import Img from "gatsby-image";
 import moment from "moment";
 
 import PageWrapper from "src/components/page-wrapper";
+import EventContent from "src/components/event-content";
 import "src/utils/styles/template-styles/eventTemplate.scss";
-
-const EventContent = ({ useCardDetails, cardDetails, extraCardDetails }) => {
-  if (!useCardDetails) return null;
-
-  return (
-    <div className="event__content">
-      {cardDetails.map((match, index) => {
-        if (match.match_description) {
-          return (
-            <React.Fragment key={index}>
-              <div className="event__match-description">
-                {match.match_description}
-              </div>
-              <div className="event__match">{match.match}</div>
-            </React.Fragment>
-          );
-        } else {
-          return (
-            <React.Fragment key={index}>
-              <div className="event__match">{match.match}</div>
-            </React.Fragment>
-          );
-        }
-      })}
-      {extraCardDetails ? (
-        <div className="event__extra-card-details">{extraCardDetails}</div>
-      ) : null}
-    </div>
-  );
-};
 
 const EventTemplate = ({ data }) => {
   const {
