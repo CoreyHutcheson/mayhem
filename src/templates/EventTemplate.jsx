@@ -63,11 +63,11 @@ export const query = graphql`
           }
         }
         featured_event
+        use_card_details
         card_details {
           match_description
           match
         }
-        use_card_details
         extra_card_details
       }
     }

@@ -62,8 +62,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const pageTemplate = path.resolve(`./src/templates/EventTemplate.jsx`);
 
   upcomingEvents.edges.forEach(edge => {
-    const prevEvent = !edge.previous ? null : edge.previous.slug;
-    const nextEvent = !edge.next ? null : edge.next.slug;
+    const prevEvent = edge.previous ? edge.previous.slug : null;
+    const nextEvent = edge.next ? edge.next.slug : null;
 
     createPage({
       path: `/event/${edge.node.slug}/`,
