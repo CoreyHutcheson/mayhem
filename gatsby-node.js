@@ -49,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Access query results via object destructuring
   const { allWordpressWpEvent: upcomingEvents } = result.data;
 
-  const pageTemplate = path.resolve(`./src/templates/event.jsx`);
+  const pageTemplate = path.resolve(`./src/templates/EventTemplate.jsx`);
 
   upcomingEvents.edges.forEach(edge => {
     createPage({
