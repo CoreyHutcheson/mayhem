@@ -5,9 +5,10 @@ import moment from "moment";
 
 import PageWrapper from "src/components/page-wrapper";
 import EventContent from "src/components/event-content";
+import EventNavigation from "src/components/event-navigation";
 import "src/utils/styles/template-styles/eventTemplate.scss";
 
-const EventTemplate = ({ data }) => {
+const EventTemplate = ({ data, pageContext }) => {
   const {
     wordpressWpEvent: { title, acf },
   } = data;
@@ -33,6 +34,14 @@ const EventTemplate = ({ data }) => {
           extraCardDetails={acf.extra_card_details}
         />
       </article>
+
+      {/* Check to make sure there are other events to link to */}
+      {pageContext.prevEvent || pageContext.nextEvent ? (
+        <EventNavigation
+          prevEvent={pageContext.prevEvent}
+          nextEvent={pageContext.nextEvent}
+        />
+      ) : null}
     </PageWrapper>
   );
 };
