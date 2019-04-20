@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-wordpress-netlify-starter",
-  "description": "A simple starter to get up and developing quickly with Gatsby, Wordpress, and Netlify",
+  "name": "mayhem-wrestling",
+  "description": "Website with CMS capabilities for Mayhem Wrestling.",
   "author": "Corey Hutcheson",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "setup": "node -v  > .nvmrc && netlify init",
     "build": "gatsby build",
-    "dev": "gatsby develop -o",
+    "dev": "gatsby develop",
     "dev-m": "gatsby develop -o -H 0.0.0.0",
     "start": "npm run dev",
     "serve": "gatsby serve",
