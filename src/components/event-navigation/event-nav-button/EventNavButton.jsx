@@ -8,7 +8,7 @@ import "./style.scss";
 const EventNavButton = ({ direction, link, icon, text }) => {
   return (
     <div className={`event-navigation__${direction}-link`}>
-      <Link to={`/event/${link}`} title={link}>
+      <Link to={`/events/${link}`} title={link}>
         <div className="event-navigation__button">
           {direction === "right" ? <span>{text}</span> : null}
           <FontAwesomeIcon icon={icon} size="1x" />
