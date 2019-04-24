@@ -39,6 +39,7 @@ const NavMenu = ({ menuExpanded }) => {
         className="nav-menu main-navigation__menu"
         aria-expanded="false"
       >
+        <ListItem link="/events" title="Events" />
         <ListItem link="/roster" title="Roster" />
         <ListItem link="/gallery" title="Gallery" />
         <ListItem link="/about" title="About" />

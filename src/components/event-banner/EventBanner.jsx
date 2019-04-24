@@ -9,7 +9,7 @@ import "./style.scss";
 const EventBanner = ({ title, slug }) => (
   <div className="featured-notification">
     <FontAwesomeIcon icon={faStar} size="1x" />
-    <Link to={`/event/${slug}`} className="featured-notification__link">
+    <Link to={`/events/${slug}`} className="featured-notification__link">
       <span>Featured:</span>
       <span className="featured-notification__title">{title}</span>
     </Link>

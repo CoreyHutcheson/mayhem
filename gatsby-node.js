@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const nextEvent = edge.next ? edge.next.slug : null;
 
     createPage({
-      path: `/event/${edge.node.slug}/`,
+      path: `/events/${edge.node.slug}/`,
       component: slash(pageTemplate),
       context: {
         id: edge.node.id,
