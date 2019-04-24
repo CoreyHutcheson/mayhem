@@ -24,7 +24,7 @@ coverage
 .grunt
 
 # Netlify folder
-.netlify
+.netlify/
 
 # Bower dependency directory (https://bower.io/)
 bower_components
