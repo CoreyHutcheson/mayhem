@@ -9,3 +9,11 @@
  */
 import "css-reset-and-normalize/scss/reset-and-normalize.scss";
 import "src/utils/styles/global.scss";
+
+export const onClientEntry = () => {
+  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+  if (typeof window.IntersectionObserver === `undefined`) {
+    import(`intersection-observer`);
+    console.log(`# IntersectionObserver is polyfilled!`);
+  }
+};
