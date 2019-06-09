@@ -8,16 +8,17 @@ import "src/utils/styles/page-styles/events.scss";
 
 const EventsPage = () => {
   const upcomingEvents = useUpcomingEvents();
-  console.log(upcomingEvents);
 
   return (
     <PageWrapper>
       <div className="event-page__wrapper">
         {upcomingEvents.map(({ node }) => (
-          <a href={`/events/${node.slug}`} className="event-page__event">
-            <div className="event-page__title" key={node.id}>
-              {node.title}
-            </div>
+          <a
+            href={`/events/${node.slug}`}
+            className="event-page__event"
+            key={node.id}
+          >
+            <div className="event-page__title">{node.title}</div>
             <Img
               className="event-page__image"
               key={node.id}
