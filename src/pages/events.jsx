@@ -20,7 +20,11 @@ const EventsPage = () => {
           >
             <div className="event-page__title">{node.title}</div>
             <Img
-              className="event-page__image"
+              className={
+                node.acf.featured_event
+                  ? "event-page__image event-page__image--featured"
+                  : "event-page__image"
+              }
               key={node.id}
               fluid={node.acf.event_image.localFile.childImageSharp.fluid}
               alt={node.title}
