@@ -1,0 +1,36 @@
+.event-page {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+  }
+
+  &__event {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+
+    width: 20%;
+    min-width: 250px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+  }
+}
