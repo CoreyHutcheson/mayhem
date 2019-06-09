@@ -1,0 +1,56 @@
+@import "src/utils/styles/_variables.scss";
+
+.index-page {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    flex: 1;
+    height: 100%;
+    background-position-y: 15%;
+    background-size: cover;
+  }
+
+  &__button {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .index-page {
+    &__button {
+      position: absolute;
+      bottom: 20%;
+      right: 10%;
+
+      width: 250px;
+      height: 80px;
+      border: 1px solid $color__brand;
+      border-radius: 5px;
+      background: #121212;
+      color: rgba(255, 255, 255, 0.87);
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 1.5rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      user-select: none;
+      text-decoration: none;
+
+      &:hover {
+        border: 1px solid #121212;
+        background: $color__brand;
+        color: #121212;
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
