@@ -1,0 +1,26 @@
+.about-page {
+  &__title {
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+  }
+
+  &__content {
+    & > p {
+      text-indent: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .about-page {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__content {
+      width: 50%;
+    }
+  }
+}
