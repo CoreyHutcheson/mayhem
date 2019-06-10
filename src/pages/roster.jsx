@@ -81,9 +81,7 @@ const RosterPage = () => {
           onRequestClose={handleModalClose}
           style={modalStyles}
         >
-          <div>
-            <ModalContent {...modalInfo} handleModalClose={handleModalClose} />
-          </div>
+          <ModalContent {...modalInfo} handleModalClose={handleModalClose} />
         </Modal>
       </div>
     </PageWrapper>
