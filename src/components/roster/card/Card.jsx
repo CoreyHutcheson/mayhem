@@ -18,7 +18,7 @@ const Field = ({ desc, children }) => (
   <div className={`c-roster-card__${desc}`}>{children}</div>
 );
 
-const Card = ({ image, title, acf }) => {
+const Card = ({ image, title, acf, openModal }) => {
   return (
     <div className="c-roster-card">
       <div className="c-roster-card__image-container">
@@ -45,7 +45,12 @@ const Card = ({ image, title, acf }) => {
         )}
       </div>
 
-      <div className="c-roster-card__hover-element">More</div>
+      <div
+        className="c-roster-card__hover-element"
+        onClick={() => openModal(title, image, acf)}
+      >
+        More
+      </div>
     </div>
   );
 };
