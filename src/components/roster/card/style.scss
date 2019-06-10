@@ -18,29 +18,6 @@ $card-margin: 1rem;
     min-width: 100px;
   }
 
-  // &__img {
-  // }
-
-  &__hover-element {
-    position: absolute;
-    // Centers the element
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    display: none;
-    z-index: 1;
-    padding: 10px 20px;
-    border-radius: 5px;
-
-    background: $color__brand;
-    color: rgba(0, 0, 0, 1);
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-    cursor: pointer;
-  }
-
   &__info {
     flex: 1 1 75%;
     position: relative;
@@ -49,48 +26,34 @@ $card-margin: 1rem;
   }
 
   &__name {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1.1rem;
     font-weight: 700;
   }
 
   &__location {
-    font-weight: 500;
+    color: rgba(0, 0, 0, 0.68);
   }
 
-  &__nickname,
-  &__quick-fact,
-  &__description {
-    display: none;
-  }
-
-  &__links {
-    display: flex;
+  &__website {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 0.25rem;
+    right: 0.5rem;
 
-    & div {
-      margin-right: 5px;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    & > a {
+      text-decoration: none;
+      color: black;
     }
   }
 
   &__champion {
     position: absolute;
-    top: 0;
-    right: 3px;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    .c-roster-card__image-container,
-    .c-roster-card__info {
-      opacity: 0.6;
-    }
-
-    .c-roster-card__hover-element {
-      display: block;
-      opacity: 0.8;
-    }
+    top: 0.25rem;
+    right: 0.5rem;
   }
 }
 

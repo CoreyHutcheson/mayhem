@@ -9,7 +9,7 @@ import "./style.scss";
 const Icon = ({ desc, link, icon, newWindow = false }) => (
   <div className={`c-roster-card__${desc}`}>
     <a href={link} target={newWindow ? "_blank" : "_self"}>
-      <FontAwesomeIcon icon={icon} />
+      <FontAwesomeIcon icon={icon} size="2x" />
     </a>
   </div>
 );
@@ -32,20 +32,15 @@ const Card = ({ image, title, acf }) => {
 
         {acf.champion && <Field desc="champion">Belt</Field>}
 
-        {(acf.gallery || acf.website) && (
-          <Field desc="links">
-            {acf.gallery && (
-              <Icon desc="gallery-link" link="#0" icon={faImages} />
-            )}
-
-            {acf.website && (
-              <Icon desc="website" link="#0" icon={faGlobe} newWindow={true} />
-            )}
-          </Field>
+        {acf.website && (
+          <Icon
+            desc="website"
+            link={acf.website}
+            icon={faGlobe}
+            newWindow={true}
+          />
         )}
       </div>
-
-      <div className="c-roster-card__hover-element">More</div>
     </div>
   );
 };
