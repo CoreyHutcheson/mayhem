@@ -1,0 +1,113 @@
+@import "src/utils/styles/_variables.scss";
+@import "src/utils/styles/_mixins.scss";
+
+$card-margin: 1rem;
+
+.c-roster-card {
+  position: relative;
+  display: flex;
+  margin: $card-margin;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  user-select: none;
+
+  &__image-container {
+    flex: 1 1 25%;
+    min-width: 100px;
+  }
+
+  // &__img {
+  // }
+
+  &__hover-element {
+    position: absolute;
+    // Centers the element
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    z-index: 1;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    background: $color__brand;
+    color: rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+
+  &__info {
+    flex: 1 1 75%;
+    position: relative;
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__location {
+    font-weight: 500;
+  }
+
+  &__nickname,
+  &__quick-fact,
+  &__description {
+    display: none;
+  }
+
+  &__links {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    & div {
+      margin-right: 5px;
+    }
+  }
+
+  &__champion {
+    position: absolute;
+    top: 0;
+    right: 3px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .c-roster-card__image-container,
+    .c-roster-card__info {
+      opacity: 0.6;
+    }
+
+    .c-roster-card__hover-element {
+      display: block;
+      opacity: 0.8;
+    }
+  }
+}
+
+@include for-tablet-portrait-up {
+  .c-roster-card {
+    flex: 0 1 calc(50% - #{$card-margin} * 2);
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .c-roster-card {
+    flex: 0 1 calc(33% - #{$card-margin} * 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .c-roster-card {
+    flex: 0 1 calc(25% - #{$card-margin} * 2);
+  }
+}
