@@ -1,0 +1,95 @@
+.modal-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__image {
+  }
+
+  &__info {
+    flex: 1;
+    padding: 0.5rem 0.5rem 2rem;
+    position: relative;
+  }
+
+  &__name {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 600;
+  }
+
+  &__nickname {
+    color: rgba(0, 0, 0, 0.68);
+    position: relative;
+    top: -0.3rem;
+    font-size: 0.7rem;
+  }
+
+  &__location {
+    font-size: 0.9rem;
+    position: relative;
+    top: -0.5rem;
+
+    & > span {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__quick-fact,
+  &__description {
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    padding: 0.5rem;
+    text-align: center;
+
+    & > span {
+      line-height: 15px;
+      font-weight: 600;
+      position: absolute;
+      top: -9px;
+      left: 5%;
+      background: white;
+      padding: 0 0.25rem;
+    }
+  }
+
+  &__description {
+    & > span {
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  &__champion {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+  }
+
+  &__links {
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+
+    & > svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    bottom: 0;
+    right: 0.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .modal-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
