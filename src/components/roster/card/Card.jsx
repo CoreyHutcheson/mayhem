@@ -2,8 +2,9 @@ import React from "react";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faImages } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
+import Belt from "../belt";
 import "./style.scss";
 
 const Icon = ({ desc, link, icon, newWindow = false }) => (
@@ -30,7 +31,11 @@ const Card = ({ image, title, acf }) => {
 
         {acf.location && <Field desc="location">{acf.location}</Field>}
 
-        {acf.champion && <Field desc="champion">Belt</Field>}
+        {acf.champion && (
+          <Field desc="champion">
+            <Belt />
+          </Field>
+        )}
 
         {acf.website && (
           <Icon
